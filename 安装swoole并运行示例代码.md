@@ -14,10 +14,10 @@
 
 2.编译安装  
 使用phpize来生成php编译配置，./configure来做编译配置检测，make和make install来完成安装。  
-    cd swoole-src-swoole-x.x.x  
+    `cd swoole-src-swoole-x.x.x  
 	phpize  
 	./configure  
-	make && sudo make install   
+	make && sudo make install`   
 
 
 3.
