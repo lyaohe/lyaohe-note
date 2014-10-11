@@ -11,9 +11,7 @@
 下载地址:<https://github.com/swoole/swoole-src/releases>  
 我下载了zip版，解压文件  
 ```
-
 unzip swoole-src-swoole-x.x.x.zip
-
 ``` 
 
 2. 编译安装  
