@@ -34,6 +34,47 @@ sudo vi php.ini
 4. 通过php -m来查看是否成功加载了swoole扩展  
 
 5. 运行示例代码  
-我建议初学者先运行github上的Example代码，Example代码写得很好，而官网的示例代码有两个细节问题要注意，Server代码，开启守护进程，初学者看不到是否运行成功了，Event代码不建议使用80端口，会跟Apache或Nginx冲突。 
-还有，phper如果没有学 
-我把github上的Example抄过来，记录一下： 
+**运行Server代码：** 
+```
+<?php
+$serv = new swoole_server("127.0.0.1", 9501);
+$serv->on('connect', function ($serv, $fd){
+    echo "Client:Connect.\n";
+});
+$serv->on('receive', function ($serv, $fd, $from_id, $data) {
+    $serv->send($fd, 'Swoole: '.$data);
+    $serv->close($fd);
+});
+$serv->on('close', function ($serv, $fd) {
+    echo "Client: Close.\n";
+});
+$serv->start();
+?>
+```
+**运行代码**，`php server.php`  
+运行代码成功，可以使用`telnet 127.0.0.1 9501`来测试连接
+具体测试可查看telnet命令如何使用。
+
+**运行Client代码：**
+```
+<?php 
+$client = new swoole_client(SWOOLE_SOCK_TCP, SWOOLE_SOCK_ASYNC);
+//设置事件回调函数
+$client->on("connect", function($cli) {
+    $cli->send("hello world\n");
+});
+$client->on("receive", function($cli, $data){
+    echo "Received: ".$data."\n";
+});
+$client->on("error", function($cli){
+    echo "Connect failed\n";
+});
+$client->on("close", function($cli){
+    echo "Connection close\n";
+});
+//发起网络连接
+$client->connect('127.0.0.1', 9501, 0.5);
+?>
+```
+**运行代码**，`php client.php`  
+测试Client是否连接到服务端。
