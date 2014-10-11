@@ -10,7 +10,11 @@
 1. 下载releases版本的swoole  
 下载地址:<https://github.com/swoole/swoole-src/releases>  
 我下载了zip版，解压文件  
-```unzip swoole-src-swoole-x.x.x.zip``` 
+```
+
+unzip swoole-src-swoole-x.x.x.zip
+
+``` 
 
 2. 编译安装  
 使用phpize来生成php编译配置，./configure来做编译配置检测，make和make install来完成安装。  
@@ -21,4 +25,15 @@ phpize
 make && sudo make install
 ``` 
 
-3.
+3. 成功后，修改php.ini加入extension=swoole.so  
+```
+cd /etc/php5/cli/
+sudo vi php.ini
+```
+加入extension=swoole.so  
+4. 通过php -m来查看是否成功加载了swoole扩展  
+
+5. 运行示例代码  
+我建议初学者先运行github上的Example代码，Example代码写得很好，而官网的示例代码有两个细节问题要注意，Server代码，开启守护进程，初学者看不到是否运行成功了，Event代码不建议使用80端口，会跟Apache或Nginx冲突。 
+还有，phper如果没有学 
+我把github上的Example抄过来，记录一下： 

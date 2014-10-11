@@ -1,7 +1,7 @@
 ## Swoole学习笔记  
 本人主要做Web开发，无意中看到Swoole，是一个非常不错的项目；  
-于是安装Swoole，打算利用空闲时间,学习一下Swoole-framework,并开发一些demo。  
-在学习的同时，发现Swoole-framework的文档很不完善，我也把我的学习笔记分享给大家，欢迎大家一起学习交流。  
+于是安装Swoole，打算利用空闲时间,学习一下Swoole和framework,并开发一些demo。  
+在学习的同时，发现Swoole和framework的文档很不完善，我也把我的学习笔记分享给大家，欢迎大家一起学习交流。  
 由于本人水平也有限，若笔记中，有什么错误请指出.  
 如果我的笔记还OK，我想加入到Swoole的开发组，我可以完善framework的文档并贡献代码。  
 
