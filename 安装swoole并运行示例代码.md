@@ -4,7 +4,7 @@
 相信不少同学看到swoole如此吊炸天，嗯，很有必要学一下，但学习swoole需要linux基础，建议同学们起码在ubuntu上搭建过lamp或lnmp，会简单使用vi，像我也搭建过lamp、lanp，还用ubuntu开发过php项目，但没有深入了解php的文件目录，按着swoole官方文档来安装了swoole，看到这句话：  
 > 成功后，修改php.ini加入extension=swoole.so。通过php -m或phpinfo()来查看是否成功加载了swoole扩展。  
   
-傻了，找了半天都不知道php.ini在哪里，找到php的路径，还发现/etc/php/apache2有php.ini,/etc/php/cli也有php.ini，究竟加到哪个php.ini,慢慢探索才发现原来加到cli目录下，`php -m` 成功了。  
+傻了，找了半天都不知道php.ini在哪里，找到php的路径，还发现/etc/php5/apache2有php.ini,/etc/php5/cli也有php.ini，究竟加到哪个php.ini,慢慢探索才发现原来加到cli目录下，`php -m` 成功了。  
 
 ### 笔记 
 1. 下载releases版本的swoole  
@@ -32,7 +32,7 @@ sudo vi php.ini
 4. 通过php -m来查看是否成功加载了swoole扩展  
 
 5. 运行示例代码  
-**运行Server代码：** 
+**Server代码：** 
 ```
 <?php
 $serv = new swoole_server("127.0.0.1", 9501);
@@ -51,9 +51,8 @@ $serv->start();
 ```
 **运行代码**，`php server.php`  
 运行代码成功，可以使用`telnet 127.0.0.1 9501`来测试连接
-具体测试可查看telnet命令如何使用。
-
-**运行Client代码：**
+具体测试可查看telnet命令如何使用。  
+**Client代码：**
 ```
 <?php 
 $client = new swoole_client(SWOOLE_SOCK_TCP, SWOOLE_SOCK_ASYNC);
