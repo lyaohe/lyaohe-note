@@ -8,7 +8,7 @@ framework是基于swoole扩展的高级开发框架，基于该框架能快速�
 ### 笔记
 1. 用github把framework克隆下来
 `git clone https://github.com/swoole/framework.git`
-2. 运行该框架
+2. 运行该框架  
 ```
 cd framework\examples
 php app_server.php
