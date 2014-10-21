@@ -41,7 +41,7 @@ $serv->on('connect', function ($serv, $fd){
 });
 $serv->on('receive', function ($serv, $fd, $from_id, $data) {
     $serv->send($fd, 'Swoole: '.$data);
-    $serv->close($fd);
+    //$serv->close($fd);
 });
 $serv->on('close', function ($serv, $fd) {
     echo "Client: Close.\n";
@@ -51,6 +51,7 @@ $serv->start();
 ```
 **运行代码**，`php server.php`  
 运行代码成功，可以使用`telnet 127.0.0.1 9501`来测试连接
+退出telnet是ctrl+]，再输入q，回车  
 具体测试可查看telnet命令如何使用。  
 **Client代码：**
 ```
