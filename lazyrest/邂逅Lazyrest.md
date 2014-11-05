@@ -7,7 +7,7 @@
 跑起来发现有报错：
 > Deprecated: mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead
 
-原来我的ubuntu14.04默认安装了php5.5，Lazyrest使用mysql_connect来写db函数库，5.5对mysql函数提示会弃用，我也动手把db库改成用mysqli来，也分享给大家。
+原来我的ubuntu14.04默认安装了php5.5，Lazyrest使用mysql_connect来写db函数库，5.5对mysql函数不是那么友好，提示会弃用，我看着这些提醒很不舒服，写了一个mysqli的库，也分享给大家。
 
 ###Lazyrest使用中还遇到两个问题
 **总结一下给大家：**  
