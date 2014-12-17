@@ -57,3 +57,13 @@
 安装过程中，会让你选择用apache还是lighttpd，既然两个都没装，就随便选一个。  
 安装完成后，建立连接
 `ln -s /usr/share/phpmyadmin /var/www`
+
+### 补充
+#### 虚拟主机
+- 重定向301
+-
+ 
+	if ($host != 'www.lnmba.com')
+	{
+		rewrite ^/(.*) http://www.lnmba.com/$1 permanent;
+	}
