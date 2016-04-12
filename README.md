@@ -4,7 +4,7 @@
 大四找工作中,欢迎有合适的工作联系我。
 
 ### 学习笔记：
-* ubuntu服务器笔记
+* [ubuntu服务器笔记](https://github.com/lyaohe/lyaohe-note/blob/master/ubuntu/ubuntu12.04%E6%90%AD%E5%BB%BAapache%2Bphp%2Bmysql%2Bphpmyadmin.md)
 * Swoole学习笔记
 * Lazyrest学习笔记
 
